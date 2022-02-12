@@ -33,8 +33,8 @@ process.on("unhandledRejection", (reason, p) => {
         .setTitle('Unhandled Rejection/Catch')
         .setURL('https://nodejs.org/api/process.html#event-unhandledrejection')
         .setColor('#2F3136')
-        .addField('Reason', `\`\`\`${inspect(reason, { depth: 0 })}\`\`\``)
-        .addField('Promise', `\`\`\`${inspect(p, { depth: 0 })}\`\`\``)
+        .addField('Reason', `\`\`\`${inspect(reason, { depth: 0 })}\`\`\``.substring(0, 1000))
+        .addField('Promise', `\`\`\`${inspect(p, { depth: 0 })}\`\`\``.substring(0, 1000))
         
         .setTimestamp()
     return b.send({
@@ -51,8 +51,8 @@ process.on("uncaughtException", (err, origin) => {
         .setTitle('Uncaught Exception/Catch')
         .setColor('#2F3136')
         .setURL('https://nodejs.org/api/process.html#event-uncaughtexception')
-        .addField('Error', `\`\`\`${inspect(err, { depth: 0 })}\`\`\``)
-        .addField('Origin', `\`\`\`${inspect(origin, { depth: 0 })}\`\`\``)
+        .addField('Error', `\`\`\`${inspect(err, { depth: 0 })}\`\`\``.substring(0, 1000))
+        .addField('Origin', `\`\`\`${inspect(origin, { depth: 0 })}\`\`\``.substring(0, 1000))
         
         .setTimestamp()
     return c.send({
@@ -69,8 +69,8 @@ process.on("uncaughtExceptionMonitor", (err, origin) => {
         .setTitle('Uncaught Exception Monitor')
         .setColor('#2F3136')
         .setURL('https://nodejs.org/api/process.html#event-uncaughtexceptionmonitor')
-        .addField('Error', `\`\`\`${inspect(err, { depth: 0 })}\`\`\``)
-        .addField('Origin', `\`\`\`${inspect(origin, { depth: 0 })}\`\`\``)
+        .addField('Error', `\`\`\`${inspect(err, { depth: 0 })}\`\`\``.substring(0, 1000))
+        .addField('Origin', `\`\`\`${inspect(origin, { depth: 0 })}\`\`\``.substring(0, 1000))
         
         .setTimestamp()
 
@@ -88,9 +88,9 @@ process.on("multipleResolves", (type, promise, reason) => {
         .setTitle('Multiple Resolves')
         .setURL('https://nodejs.org/api/process.html#event-multipleresolves')
         .setColor('#2F3136')
-        .addField('Type', `\`\`\`${inspect(type, { depth: 0 })}\`\`\``)
-        .addField('Promise', `\`\`\`${inspect(promise, { depth: 0 })}\`\`\``)
-        .addField('Reason', `\`\`\`${inspect(reason, { depth: 0 })}\`\`\``)
+        .addField('Type', `\`\`\`${inspect(type, { depth: 0 })}\`\`\``.substring(0, 1000))
+        .addField('Promise', `\`\`\`${inspect(promise, { depth: 0 })}\`\`\``.substring(0, 1000))
+        .addField('Reason', `\`\`\`${inspect(reason, { depth: 0 })}\`\`\``.substring(0, 1000))
         
         .setTimestamp()
     return e.send({
@@ -107,7 +107,7 @@ process.on("warning", (warn) => {
         .setTitle('Warning')
         .setColor('#2F3136')
         .setURL('https://nodejs.org/api/process.html#event-warning')
-        .addField('Warn', `\`\`\`${inspect(warn, { depth: 0 })}\`\`\``)
+        .addField('Warn', `\`\`\`${inspect(warn, { depth: 0 })}\`\`\``.substring(0, 1000))
         
         .setTimestamp()
     return f.send({
