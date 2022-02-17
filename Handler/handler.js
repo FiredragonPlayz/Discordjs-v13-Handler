@@ -59,7 +59,7 @@ module.exports = async (client) => {
         await client.guilds.cache.get(process.env.GUILD_ID).commands.set(slashCommands).then(console.log(chalk.white(`✅ Successfully Registered`), chalk.red(client.SlashCommands.size), chalk.white('Slash Commands in'), chalk.red(client.guilds.cache.size), chalk.white(`${client.guilds.cache.size > 1 ? "Guilds" : "Guild"}`)))
 
         // Slash Commands for all the guilds
-        // await client.application.commands.set(arrayOfSlashCommands).then(console.log(chalk.white(`✅ Successfully Registered`), chalk.red(client.slashCommands.size), chalk.white('Slash Commands in'), chalk.red(client.guilds.cache.size), chalk.white(`${client.guilds.cache.size > 1 ? "Guilds" : "Guild"}`)));
+        // await client.application.commands.set(slashCommands).then(console.log(chalk.white(`✅ Successfully Registered`), chalk.red(client.slashCommands.size), chalk.white('Slash Commands in'), chalk.red(client.guilds.cache.size), chalk.white(`${client.guilds.cache.size > 1 ? "Guilds" : "Guild"}`)));
     });
 
     // Events Handler
